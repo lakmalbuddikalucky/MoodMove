@@ -52,10 +52,10 @@
     </nav>
 
     <div class="row">
-        <div class="col-sm-12">
-            <h2 id="timePlaceholder">I have {{selectedHour}} {{textHour}}</h2>
+        <div class="col-sm-11" style="margin-left:30px">
+            <h3 id="timePlaceholder">I have {{selectedHour}} {{textHour}} to travel</h3>
             <br>
-            <select style="width: 190px;margin-bottom: 1px" class="btn btn-info dropdown-toggle" ng-change="changeHour(selectedHour)" ng-model="selectedHour" ng-init="selectedHour='_____'">
+            <select style="width: 90%; margin-right:30px;margin-bottom: 1px" class="btn btn-default dropdown-toggle" ng-change="changeHour(selectedHour)" ng-model="selectedHour" ng-init="selectedHour='_____'">
                 <option value="" selected>Hours you have</option>
                 <option value="{{hour}}" ng-repeat="hour in hourList">
                         {{hour}}
@@ -63,7 +63,6 @@
             </select>
         </div>
     </div>
-
 
     <!--Scripts for AMazon AWS for type forms, ANgularJS and app.js-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
