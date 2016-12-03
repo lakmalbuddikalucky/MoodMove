@@ -31,7 +31,7 @@
     </style>
 </head>
 
-<body ng-controller="AppController">
+<body ng-controller="AppController" style="filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#C0CFE2', startColorstr='#FFFFFF', gradientType='0');">
     <!--Header-->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -61,6 +61,18 @@
                         {{hour}}
                 </option>
             </select>
+        </div>
+    </div>
+
+    <br>
+    <div class="row" ng-if="selectedHour!='_____'">
+        <div class="col-sm-11" style="margin-left:30px">
+            <h3>My mood is like</h3>
+            <br>
+            <img src="../images/chill.png" ng-click="goToItenary()" style="height:150px;width:150px">
+            <img src="../images/party.png" ng-click="goToItenary()" style="height:150px;width:150px">
+            <img src="../images/family.png" ng-click="goToItenary()" style="height:150px;width:150px;margin-top:3px">
+            <img src="../images/romance.png" ng-click="goToItenary()" style="height:150px;width:150px;margin-top:3px">
         </div>
     </div>
 

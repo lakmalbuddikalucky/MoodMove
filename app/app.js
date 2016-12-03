@@ -4,7 +4,9 @@ var MoodMove = angular.module('MoodMove', ['ngRoute', 'ngResource']);
 
 MoodMove.controller('AppController', ['$scope', function($scope) {
     $scope.selectedHour;
+
     $scope.textHour = "hours"
+
     $scope.changeHour = function(selectedHour) {
         if (selectedHour == "1") {
             $scope.textHour = "hour";
@@ -12,6 +14,7 @@ MoodMove.controller('AppController', ['$scope', function($scope) {
             $scope.textHour = "hours";
         }
     }
+
     $scope.hourList = {
         1: "1",
         2: "2",
@@ -23,4 +26,9 @@ MoodMove.controller('AppController', ['$scope', function($scope) {
         8: "8",
         9: "9"
     };
+
+    $scope.goToItenary = function() {
+        window.location.href = "./itenary.html"
+    }
+
 }]);
