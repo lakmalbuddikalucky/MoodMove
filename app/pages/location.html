@@ -12,7 +12,7 @@
        * element that contains the map. */
         
         #map {
-            height: 60%;
+            height: 50%;
         }
         /* Optional: Makes the sample page fill the window. */
         
@@ -36,7 +36,7 @@
             width: 200px;
             height: 470px;
             overflow: auto;
-            left: 442px;
+            left: 0px;
             top: 0px;
             cursor: pointer;
             overflow-x: hidden;
@@ -92,7 +92,7 @@
         
         #resultsTable {
             border-collapse: collapse;
-            width: 240px;
+            width: 100%;
         }
         
         #rating {
@@ -122,17 +122,17 @@
                 <a class="navbar-brand" href="#">
                     <div class="row">
 
-                        <div id="locationField">
-                            <input id="autocomplete" class="form-control" placeholder="Enter a city" type="text" style="margin-left:0px" />
+                        <div id="locationField" style="margin-left:-20px;margin-top:8px">
+                            <input id="autocomplete" class="form-control" placeholder="I am at" type="text" style="margin-left:0px;margin-top:0px" />
                         </div>
 
-                        <div id="controls" style="margin-left:200px">
+                        <div id="controls" style="margin-left:300px">
                             <select id="country">
                                 <option value="de" selected>Germany</option>
                             </select>
                         </div>
 
-                        <button class="btn btn-info" style="margin-left:300px; margin-top:-7px; 
+                        <button class="btn btn-info" style="margin-left:600px; margin-top:-7px; 
                                 background-color:#efec17; color:#000000; border-style: solid;
                                 border-color: #efec17 #efec17;" onclick="window.location.href='./pages/location.html'">
                                 Enter
@@ -150,12 +150,15 @@
         I am at
     </div>
 
-    <div id="map" style="margin-top:70px"></div>
+    <div id="map" style="margin-top:-20px"></div>
+    <br>
 
-    <div id="listing">
-        <table id="resultsTable">
-            <tbody id="results"></tbody>
-        </table>
+    <div class="row">
+        <div id="listing" style="width:100%; margin-top:370px">
+            <table id="resultsTable">
+                <tbody id="results"></tbody>
+            </table>
+        </div>
     </div>
 
     <div style="display: none">
@@ -465,8 +468,7 @@
         function buildIWContent(place) {
             document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
                 'src="' + place.icon + '"/>';
-            document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +
-                '">' + place.name + '</a></b>';
+            document.getElementById('iw-url').innerHTML = '<b><a href="./time.html">' + place.name + '</a></b>';
             document.getElementById('iw-address').textContent = place.vicinity;
 
             if (place.formatted_phone_number) {

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="MoodMove">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <title>MoodMove</title>
+    <!--The styling for the Type form stuff-->
+    <style type="text/css">
+        html {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        iframe {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            border: 0;
+        }
+        
+        #timePlaceholder {
+            font-size: 24;
+            width: 200%;
+            color: #38414f;
+        }
+    </style>
+</head>
+
+<body ng-controller="AppController">
+    <!--Header-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <div class="row">
+                        <div class="col-sm-12" style="align-content:center">
+                            <button class="btn btn-info" style="width:100%; margin-left:90px; margin-top:-7px; 
+                                background-color:#efec17; color:#000000; border-style: solid;
+                                border-color: #efec17 #efec17;" onclick="window.location.href='./mood.html'">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 id="timePlaceholder">I have {{selectedHour}} {{textHour}}</h2>
+            <br>
+            <select style="width: 190px;margin-bottom: 1px" class="btn btn-info dropdown-toggle" ng-change="changeHour(selectedHour)" ng-model="selectedHour" ng-init="selectedHour='_____'">
+                <option value="" selected>Hours you have</option>
+                <option value="{{hour}}" ng-repeat="hour in hourList">
+                        {{hour}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+
+    <!--Scripts for AMazon AWS for type forms, ANgularJS and app.js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+    <script src="../app.js"></script>
+</body>
+
+</html>
