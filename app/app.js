@@ -31,4 +31,8 @@ MoodMove.controller('AppController', ['$scope', function($scope) {
         window.location.href = "./itenary.html"
     }
 
+    $scope.goToItenaryGrab = function() {
+        window.location.href = "./route.html"
+    }
+
 }]);
